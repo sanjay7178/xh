@@ -1,11 +1,10 @@
 """Tests for xh package."""
 
 import pytest
+import xh
 
-from xh import xh
 
-
-def test_sync_execution():
+def test_sync_execution() -> None:
     """
     Test synchronous execution of a command.
 
@@ -19,7 +18,7 @@ def test_sync_execution():
     assert result.strip() == 'hello'
 
 
-def test_iter_mode():
+def test_iter_mode() -> None:
     """
     Test iterative mode (_iter=True) that returns an iterator over lines.
 
@@ -31,7 +30,7 @@ def test_iter_mode():
 
 
 @pytest.mark.asyncio
-async def test_async_mode():
+async def test_async_mode() -> None:
     """
     Test asynchronous mode (_async=True) that returns an async generator.
 
@@ -46,7 +45,7 @@ async def test_async_mode():
     assert lines == ['0', '1', '2']
 
 
-def test_background_mode():
+def test_background_mode() -> None:
     """
     Test background execution (_bg=True) with an output callback.
 
@@ -69,7 +68,7 @@ def test_background_mode():
     assert collected == ['0', '1', '2']
 
 
-def test_command_interface():
+def test_command_interface() -> None:
     """
     Test command interface.
 
@@ -82,7 +81,7 @@ def test_command_interface():
     assert result.strip() == 'test'
 
 
-def test_repr():
+def test_repr() -> None:
     """
     Test __repr__ for Command and CommandResult.
 
